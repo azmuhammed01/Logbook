@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addlog.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/book-atlas-solid-full.png')}}" type="image/x-icon">
+</head>
+<body>
+    <h2>Edit Log Entry</h2>
+    <form method="POST">
+        <input type="text" name="title" value="{{ log.title }}" required><br>
+        <textarea name="description" required>{{ log.description }}</textarea><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+</body>
+</html>

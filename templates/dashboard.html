@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logbook Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/book-atlas-solid-full.png')}}" type="image/x-icon">
+</head>
+<body>
+    <h1>Welcome, {{ user_name }}!</h1>
+    <a href="{{ url_for('add_log') }}" class="add-log">➕ Add New Log</a>
+    <a href="{{ url_for('export_csv') }}" class="add-log" style="background-color: #28a745;">⬇️ Export as CSV</a>
+    <a href="{{ url_for('logout') }}" class="add-log" style="background-color: #dc3545;" onclick="return confirm('Are you sure you want to Logout?')">🚪 Logout</a>
+
+    <h2>Your Logs</h2><br>
+    {% if logs %}
+        <ul>
+    {% for log in logs %}
+    <li>
+        <strong>{{ log.title }}</strong><br>
+        {{ log.description }}<br>
+        <small>{{ log.date.strftime('%Y-%m-%d %H:%M') }}</small><br>
+
+        <!-- Edit & Delete -->
+        <a href="{{ url_for('edit_log', log_id=log.id) }}">✏️ Edit</a>
+
+        <form method="POST" action="{{ url_for('delete_log', log_id=log.id) }}" style="display:inline;">
+            <button type="submit" onclick="return confirm('Are you sure you want to delete this log?');">🗑 Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+    {% else %}
+        <p>No logs yet. Start by adding one.</p>
+    {% endif %}
+</body>
+</html>

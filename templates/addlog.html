@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Log</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/addlog.css')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/book-atlas-solid-full.png')}}" type="image/x-icon">
+</head>
+<body>
+    <h2>SIWES Daily Log Entry</h2>
+<form method="POST">
+    <label>Date:</label>
+    <input type="date" name="date" required><br>
+
+    <label>Title / Topic:</label>
+    <input type="text" name="title" placeholder="E.g., Learned HTML Forms" required><br>
+
+    <label>Description / Activities:</label>
+    <textarea name="description" placeholder="Describe what you learned or worked on..." required></textarea><br>
+
+    <label>Hours Worked (Optional):</label>
+    <input type="number" step="0.1" name="hours"><br>
+
+    <button type="submit">Submit</button>
+</form>
+<a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+
+</body>
+</html>

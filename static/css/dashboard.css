@@ -1,0 +1,114 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    padding: 30px;
+    color: #333;
+}
+
+/* Header */
+h1 {
+    font-size: 2rem;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #1d3557;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add Log Button */
+.add-log {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.add-log:hover {
+    background-color: #0056b3;
+}
+
+/* Log List */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 6px solid #007BFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+li strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+li small {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* Action Buttons */
+li a,
+li button {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+form {
+    display: inline;
+}
+
+button {
+    padding: 6px 12px;
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+.add-log.green {
+    background-color: #28a745;
+}
+
+.add-log.green:hover {
+    background-color: #218838;
+}
+
