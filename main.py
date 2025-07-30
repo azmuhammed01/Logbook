@@ -28,12 +28,11 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 migrate = Migrate(app, db)
 def send_reset_email(to_email, reset_url):
-    message = Mail(
-        from_email=,
-        to_emails=to_email,
-        subject='Password Reset Request',
-        plain_text_content=reset_url
-    )
+    message = Mail()
+    from_email='muhammedabdulazeez78@gmail.com'
+    to_emails=to_email,
+    subject='Password Reset Request',
+    plain_text_content=reset_url
     try:
         sg = SendGridAPIClient(os.getenv("DY3SgUOAQWyfHvSt4W1"))
         response = sg.send(message)
